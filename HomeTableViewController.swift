@@ -109,7 +109,7 @@ class HomeTableViewController: UITableViewController {
         
         let coursesData = [
             CourseData(name: "English 10 H: Steele, George", url: "https://raw.githubusercontent.com/kiliankoe/iCalKit/master/Tests/example.ics"),
-            CourseData(name: "Physics H: Hosey, Daniel", url: "https://raw.githubusercontent.com/wackymaster/SteerIOS/master/example.ics"),
+            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
             CourseData(name: "Phyiscal Education", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561")
         ]
         

@@ -104,13 +104,13 @@ class HomeTableViewController: UITableViewController {
     */
     
     //MARK: Private Methods
-    
+
     private func loadClassData() {
-        
         let coursesData = [
-            CourseData(name: "English 10 H: Steele, George", url: "https://raw.githubusercontent.com/kiliankoe/iCalKit/master/Tests/example.ics"),
-            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
-            CourseData(name: "Phyiscal Education", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561")
+            CourseData(name: "Example ICS", url: "https://raw.githubusercontent.com/wackymaster/Steer/master/test4.ics?token=AH5G2LCxnnr-diN8RrG4Z0ambOe2yVIQks5aTYH1wA%3D%3D"),
+            CourseData(name: "GithubRaw", url: "https://raw.githubusercontent.com/wackymaster/Steer/master/icalfeed.ics?token=AH5G2GjY9bpbw3WIEDjUh6MDPWWBmLZmks5aTYRpwA%3D%3D"),
+            CourseData(name: "Steele H", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
+            CourseData(name: "Hosey H", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661")
         ]
         
         

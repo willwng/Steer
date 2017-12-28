@@ -17,11 +17,12 @@ public struct Event {
     // public var class: some enum type?
     public var dtstart: Date?
     public var dtend: Date?
-
+    
     public init(uid: String? = NSUUID().uuidString, dtstamp: Date? = Date()) {
         self.uid = uid
         self.dtstamp = dtstamp
     }
+
 }
 
 extension Event: CalendarComponent {
@@ -64,16 +65,16 @@ extension Event: CalendarComponent {
 extension Event: IcsElement {
     public mutating func addAttribute(attr: String, _ value: String) {
         switch attr {
-        case "UID":
-            uid = value
+        //case "UID":
+            //uid = value
         case "DTSTAMP":
             dtstamp = value.toDate()
         case "SUMMARY":
             summary = value
         case "DESCRIPTION":
             descr = value
-        case "DTSTART":
-            dtstart = value.toDate()
+        //case "DTSTART":
+            //dtstart = value.toDate()
         //case "DTEND":
             //dtend = value.toDate()
         // case "ORGANIZER":
@@ -94,16 +95,27 @@ public func ==(lhs: Event, rhs: Event) -> Bool {
 
 extension Event: CustomStringConvertible {
     public var description: String {
+        let date = Date()
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MM/dd"
         var output = ""
         //return String(describing: dtstamp.toString()) + ": " + summary! + ": "
         if (dtstamp != nil){
-            output += String(describing: dtstamp.toString()) + " "
-        }
-        if (summary != nil){
-            output += summary! + " "
-        }
-        if (descr != nil){
-            output += descr!
+            let dateLower = date.addingTimeInterval(-172800)
+            let dateUpper = date.addingTimeInterval(86400)
+            //if (dtstamp <= dateUpper && dtstamp >= dateLower){
+            if (dtstamp  != nil){
+                if (dtstamp != nil){
+                    let dateprint = dateFormatterPrint.string(from: dtstamp)
+                    output += String(describing: dateprint) + ": "
+                }
+                if (summary != nil){
+                    output += summary! + " "
+                }
+                if (descr != nil){
+                    output += descr!
+                }
+            }
         }
         return(output)
     }

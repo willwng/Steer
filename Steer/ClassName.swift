@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 struct Course {
     let title : String
     let description : String

@@ -1,26 +1,25 @@
 //
-//  HomeTableViewController.swift
+//  ClassTableViewController.swift
 //  Steer
 //
-//  Created by Mac Sierra on 12/24/17.
+//  Created by Mac Sierra on 12/28/17.
 //  Copyright © 2017 Will Wang. All rights reserved.
 //
 
 import UIKit
-import Alamofire
-import iCalKit
-class HomeTableViewController: UITableViewController {
 
-    //MARK: Properties
-
-    var courses = [Course]()
+class ClassTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadClassData()
-        // Load the sample data.
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,23 +34,20 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return courses.count
+        //CHANGE THIS
+        return 2
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "HomeTableViewCell"
+
+        let cellIdentifier = "ClassTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomeTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of HomeTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ClassTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of ClassTableViewCell.")
         }
-        
-        // Fetches the appropriate meal for the data source layout.
-        let course = courses[indexPath.row]
-        
-        cell.classLabel.text = course.title
-        cell.taskLabel.text = course.description
+        cell.ClassName.text = "English 10H: George, Steele"
+        cell.ClassSchool.text = "Pittsford Sutherland"
 
         return cell
     }
@@ -101,30 +97,5 @@ class HomeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    //MARK: Private Methods
 
-    private func loadClassData() {
-        let coursesData = [
-            CourseData(name: "English 10H: Steele, George", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
-            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661")
-        ]
-        
-        
-        for classes in coursesData{
-            var data = ""
-            let url = URL(string: classes.url)
-            let cals = try! iCal.load(url: url!)
-            for cal in cals {
-                for event in cal.subComponents where event is Event {
-                    print(event)
-                    data += "\n"
-                    data += String(describing: event)
-                }
-            }
-            let class1 = Course(title: classes.name, description: data)
-            courses += [class1]
-        }
-    }
 }
-

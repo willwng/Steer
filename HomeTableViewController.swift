@@ -20,8 +20,7 @@ class HomeTableViewController: UITableViewController {
         loadClassData()
         // Load the sample data.
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -107,10 +106,8 @@ class HomeTableViewController: UITableViewController {
 
     private func loadClassData() {
         let coursesData = [
-            CourseData(name: "Example ICS", url: "https://raw.githubusercontent.com/wackymaster/Steer/master/test4.ics?token=AH5G2LCxnnr-diN8RrG4Z0ambOe2yVIQks5aTYH1wA%3D%3D"),
-            CourseData(name: "GithubRaw", url: "https://raw.githubusercontent.com/wackymaster/Steer/master/icalfeed.ics?token=AH5G2GjY9bpbw3WIEDjUh6MDPWWBmLZmks5aTYRpwA%3D%3D"),
-            CourseData(name: "Steele H", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
-            CourseData(name: "Hosey H", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661")
+            CourseData(name: "English 10H: Steele, George", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
+            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661")
         ]
         
         

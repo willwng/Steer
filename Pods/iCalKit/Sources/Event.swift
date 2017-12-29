@@ -14,6 +14,7 @@ public struct Event {
     public var location: String?
     public var summary: String?
     public var descr: String?
+    public var bla: String?
     // public var class: some enum type?
     public var dtstart: Date?
     public var dtend: Date?
@@ -67,12 +68,14 @@ extension Event: IcsElement {
         switch attr {
         //case "UID":
             //uid = value
-        case "DTSTAMP":
+        case "DTSTART":
             dtstamp = value.toDate()
         case "SUMMARY":
             summary = value
         case "DESCRIPTION":
             descr = value
+        case "\n":
+            bla = value
         //case "DTSTART":
             //dtstart = value.toDate()
         //case "DTEND":
@@ -101,10 +104,10 @@ extension Event: CustomStringConvertible {
         var output = ""
         //return String(describing: dtstamp.toString()) + ": " + summary! + ": "
         if (dtstamp != nil){
-            let dateLower = date.addingTimeInterval(-172800)
-            let dateUpper = date.addingTimeInterval(86400)
-            //if (dtstamp <= dateUpper && dtstamp >= dateLower){
-            if (dtstamp  != nil){
+            let day = 86400
+            let dateLower = date.addingTimeInterval(TimeInterval(-(day*50)))
+            let dateUpper = date.addingTimeInterval(TimeInterval(day*50))
+            if (dtstamp <= dateUpper && dtstamp >= dateLower){
                 if (dtstamp != nil){
                     let dateprint = dateFormatterPrint.string(from: dtstamp)
                     output += String(describing: dateprint) + ": "

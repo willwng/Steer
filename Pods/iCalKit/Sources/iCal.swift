@@ -20,7 +20,8 @@ public enum iCal {
     /// - Warning: This is a **synchronous** operation! Use `load(string:)` and fetch your data beforehand for async handling.
     public static func load(url: URL, encoding: String.Encoding = .utf8) throws -> [Calendar] {
         let data = try Data(contentsOf: url)
-        guard let string = String(data: data, encoding: encoding) else { throw iCalError.encoding }
+        guard var string = String(data: data, encoding: encoding) else { throw iCalError.encoding }
+        string = string.replacingOccurrences(of: "\r\n", with: "\n")
         return load(string: string)
     }
 
@@ -36,7 +37,7 @@ public enum iCal {
 
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
+        dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter
     }()
 }

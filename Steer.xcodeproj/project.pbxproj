@@ -142,13 +142,13 @@
 			isa = PBXGroup;
 			children = (
 				49EB04521FEFF235007B6A6A /* AppDelegate.swift */,
-				49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */,
 				4959C42F1FF6B3990043FC13 /* Classes.swift */,
 				49A437581FF5F46C00EB2AB5 /* ClassTableViewCell.swift */,
-				49EB048A1FEFFB5C007B6A6A /* HomeTableViewController.swift */,
-				49EB04861FEFF60C007B6A6A /* HomeTableViewCell.swift */,
-				49A437541FF5F41900EB2AB5 /* ClassName.swift */,
+				49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */,
 				49A437501FF5F3A400EB2AB5 /* CourseData.swift */,
+				49A437541FF5F41900EB2AB5 /* ClassName.swift */,
+				49EB04861FEFF60C007B6A6A /* HomeTableViewCell.swift */,
+				49EB048A1FEFFB5C007B6A6A /* HomeTableViewController.swift */,
 				49EB04541FEFF235007B6A6A /* ViewController.swift */,
 				49EB04561FEFF235007B6A6A /* Main.storyboard */,
 				49EB04591FEFF235007B6A6A /* Assets.xcassets */,

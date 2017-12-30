@@ -8,18 +8,38 @@
 
 import UIKit
 import iCalKit
-
+import SQLite3
 class HomeTableViewController: UITableViewController {
 
     //MARK: Properties
-
+    var db: OpaquePointer?
     var courses = [Course]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent("Classes.sqlite")
+        
+        
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("error opening database")
+        }
+        
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Classes (id INTEGER PRIMARY KEY NOT NULL, name TEXT, url TEXT)", nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error creating table: \(errmsg)")
+        }
         loadClassData()
+        
     }
-    
+
+    @IBAction func Refresh(_ sender: UIBarButtonItem) {
+        self.tableView.reloadData()
+        self.courses.removeAll()
+        self.loadClassData()
+        self.tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,7 +75,27 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
     
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            let deleteStatementStirng = "DELETE FROM Classes WHERE id = \(indexPath.row);"
+            self.courses.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            var deleteStatement: OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
+                if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                    print("Successfully deleted row.")
+                } else {
+                    print("Could not delete row.")
+                }
+            } else {
+                print("DELETE statement could not be prepared")
+            }
+            
+            sqlite3_finalize(deleteStatement)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -104,19 +144,32 @@ class HomeTableViewController: UITableViewController {
     //MARK: Private Methods
 
     private func loadClassData() {
-        let coursesData = [
-            CourseData(name: "English 10H: Steele, George", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
-            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661"),
-            CourseData(name: "Pittsford Nordic", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=21245"),
-            CourseData(name: "Pittsford Nordic", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=21245"),
-            CourseData(name: "Pittsford Nordic", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=21245")
-        ]
+        let queryString = "SELECT * FROM Classes"
         
+        var stmt:OpaquePointer?
+        
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing insert: \(errmsg)")
+            return
+        }
+        var coursesData = [CourseData(name: "English 10H: Steele, George", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561")]
+        
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            let id = Int(sqlite3_column_int(stmt, 0))
+            let name = String(cString: sqlite3_column_text(stmt, 1))
+            let url = String(cString: sqlite3_column_text(stmt, 2))
+            print(id)
+            coursesData.append(CourseData(name: String(describing: name), url: String(describing: url)))
+        }
         
         for classes in coursesData{
             var data = ""
             let url = URL(string: classes.url)
-            let cals = try! iCal.load(url: url!)
+            guard let cals = try? iCal.load(url: url!) else {
+                return
+            }
+
             for cal in cals {
                 for event in cal.subComponents where event is Event {
                     print(event)

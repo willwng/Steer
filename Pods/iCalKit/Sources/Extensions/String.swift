@@ -15,6 +15,13 @@ extension String {
 
     /// Convert String to Date
     func toDate() -> Date? {
-        return iCal.dateFormatter.date(from: self)
+        iCal.dateFormatter.dateFormat = "yyyyMMdd"
+        if iCal.dateFormatter.date(from: self) != nil {
+            return iCal.dateFormatter.date(from: self)
+        } else {
+            iCal.dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
+            return iCal.dateFormatter.date(from: self)
+        }
+        
     }
 }

@@ -8,9 +8,7 @@ target 'Steer' do
   use_frameworks!
 
   # Pods for Steer
-    pod 'Alamofire', '~> 4.5'
     pod 'iCalKit', :git => 'https://github.com/kiliankoe/iCalKit.git'
-
 	
 
   target 'SteerTests' do

@@ -34,7 +34,7 @@
         <!--My Classes-->
         <scene sceneID="FyU-Jc-0KI">
             <objects>
-                <tableViewController id="fGQ-zf-LPo" customClass="HomeTableViewController" customModule="Steer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="My Classes" id="fGQ-zf-LPo" customClass="HomeTableViewController" customModule="Steer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" id="vA6-9j-x4o" customClass="ClassData">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LEA-fQ-LiT">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="ls0-MB-HWq" kind="show" id="WSR-My-MD7"/>
+                                <segue destination="53y-BG-uSI" kind="show" id="iwf-Np-kDP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,59 +91,63 @@
             </objects>
             <point key="canvasLocation" x="220" y="26"/>
         </scene>
-        <!--Class Table View Controller-->
-        <scene sceneID="G5l-nr-okO">
+        <!--Add Classes-->
+        <scene sceneID="igU-gk-Snz">
             <objects>
-                <tableViewController id="ls0-MB-HWq" customClass="ClassTableViewController" customModule="Steer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eGD-O5-70f">
+                <tableViewController title="Add Classes" id="53y-BG-uSI" customClass="ClassTableViewController" customModule="Steer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iHX-KK-6X6" customClass="Classes">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassTableViewCell" rowHeight="113" id="wxi-wy-EM1" customClass="ClassTableViewCell" customModule="Steer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="113"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassTableViewCell" rowHeight="138" id="JDh-eH-ly7" customClass="ClassTableViewCell" customModule="Steer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wxi-wy-EM1" id="Ruu-jX-RwO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JDh-eH-ly7" id="qUr-is-HnV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English 10 Honors: Steele, George" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wj-di-Qhf">
-                                            <rect key="frame" x="0.0" y="11" width="351" height="31"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English 10 Honors: Steele, George" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9Y-2d-g51">
+                                            <rect key="frame" x="16" y="13" width="351" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3h-Lm-PRD">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nma-4C-VhR">
                                             <rect key="frame" x="264" y="41" width="87" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Add Class"/>
+                                            <connections>
+                                                <action selector="AddClass:" destination="53y-BG-uSI" eventType="touchUpInside" id="fZR-eE-h3y"/>
+                                            </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pittsford Sutherland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFa-yr-5EQ">
-                                            <rect key="frame" x="0.0" y="50" width="351" height="31"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pittsford Sutherland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-N3-xq2">
+                                            <rect key="frame" x="16" y="48" width="351" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="AddClass" destination="p3h-Lm-PRD" id="rdg-iP-m2r"/>
-                                    <outlet property="ClassName" destination="3wj-di-Qhf" id="EAZ-6V-UIl"/>
-                                    <outlet property="ClassSchool" destination="QFa-yr-5EQ" id="bDG-L6-nd1"/>
+                                    <outlet property="AddClass" destination="Nma-4C-VhR" id="VK9-4L-Mwl"/>
+                                    <outlet property="ClassName" destination="m9Y-2d-g51" id="c02-5W-0AX"/>
+                                    <outlet property="ClassSchool" destination="Mqg-N3-xq2" id="AMI-Ld-5ta"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="ls0-MB-HWq" id="TxE-qB-ZaG"/>
-                            <outlet property="delegate" destination="ls0-MB-HWq" id="PUu-HW-ar7"/>
+                            <outlet property="dataSource" destination="53y-BG-uSI" id="Y0R-l3-5Nx"/>
+                            <outlet property="delegate" destination="53y-BG-uSI" id="SmW-xS-puF"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Classes" id="bRk-mJ-Jmz"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fCc-BZ-6ZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1A-hR-T0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="25.637181409295355"/>
+            <point key="canvasLocation" x="993" y="26"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.28824871169999999" green="0.4393939275" blue="0.58417665159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

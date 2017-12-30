@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
 import iCalKit
+
 class HomeTableViewController: UITableViewController {
 
     //MARK: Properties
@@ -18,7 +18,6 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadClassData()
-        // Load the sample data.
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,7 +106,8 @@ class HomeTableViewController: UITableViewController {
     private func loadClassData() {
         let coursesData = [
             CourseData(name: "English 10H: Steele, George", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
-            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661")
+            CourseData(name: "Physics H: Hosey, Daniel", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661"),
+            CourseData(name: "Pittsford Nordic", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=21245")
         ]
         
         

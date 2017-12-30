@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4959C4301FF6B3990043FC13 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959C42F1FF6B3990043FC13 /* Classes.swift */; };
 		49A437511FF5F3A400EB2AB5 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A437501FF5F3A400EB2AB5 /* CourseData.swift */; };
 		49A437551FF5F41900EB2AB5 /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A437541FF5F41900EB2AB5 /* ClassName.swift */; };
 		49A437571FF5F45700EB2AB5 /* ClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		119945F56C22F06923661322 /* Pods_SteerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SteerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F1BF069FD1C66629676F8F /* Pods-SteerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SteerTests/Pods-SteerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4959C42F1FF6B3990043FC13 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		49A437501FF5F3A400EB2AB5 /* CourseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		49A437541FF5F41900EB2AB5 /* ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
 		49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				49EB04521FEFF235007B6A6A /* AppDelegate.swift */,
 				49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */,
+				4959C42F1FF6B3990043FC13 /* Classes.swift */,
 				49A437581FF5F46C00EB2AB5 /* ClassTableViewCell.swift */,
 				49EB048A1FEFFB5C007B6A6A /* HomeTableViewController.swift */,
 				49EB04861FEFF60C007B6A6A /* HomeTableViewCell.swift */,
@@ -366,12 +369,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Steer/Pods-Steer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/iCalKit/iCalKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCalKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +491,7 @@
 				49EB04871FEFF60C007B6A6A /* HomeTableViewCell.swift in Sources */,
 				49EB04531FEFF235007B6A6A /* AppDelegate.swift in Sources */,
 				49A437551FF5F41900EB2AB5 /* ClassName.swift in Sources */,
+				4959C4301FF6B3990043FC13 /* Classes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

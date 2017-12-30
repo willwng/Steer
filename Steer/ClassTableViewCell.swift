@@ -10,6 +10,7 @@ import UIKit
 
 class ClassTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var URL: UILabel!
     @IBOutlet weak var ClassName: UILabel!
     @IBOutlet weak var ClassSchool: UILabel!
     @IBOutlet weak var AddClass: UIButton!
@@ -24,5 +25,11 @@ class ClassTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func AddClass(_ sender: UIButton) {
+        let classname = self.ClassName.text
+        let schoolname = self.ClassSchool.text
+        let url = self.URL.text
+        print(classname!, schoolname!, url!)
+    }
 }

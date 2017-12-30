@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct Classes {
-    let course : String
-    let school : String
-    let url: String
+class Classes {
+    var course : String
+    var school : String
+    var url: String
+    
+    init(course: String?, school: String?, url: String?){
+        self.course = course!
+        self.school = school!
+        self.url = url!
+    }
 }

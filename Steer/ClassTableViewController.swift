@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import SQLite3
 
 class ClassTableViewController: UITableViewController {
     
+    var db: OpaquePointer?
     var classe = [Classes]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadClassData()
+        
     }
 
-    @IBAction func AddClass(_ sender: UIButton) {
-        print("Attempting to add class")
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,7 +52,7 @@ class ClassTableViewController: UITableViewController {
         cell.ClassName.text = course.course
         cell.ClassSchool.text = course.school
         cell.AddClass.setTitle("Add Class", for: .normal)
-        
+        cell.URL.text = course.url
         return cell
     }
     
@@ -65,10 +66,11 @@ class ClassTableViewController: UITableViewController {
     }
     */
     private func loadClassData() {
+        
         let coursesData = [
-            Classes(course: "English 10H: Steele, George", school: "Pittsford Sutherland", url: ""),
-            Classes(course: "Physics H: Hosey, Daniel", school: "Pittsford Sutherland", url: ""),
-            Classes(course: "Physics H: Hosey, Daniel", school: "Pittsford Sutherland", url: "")
+            Classes(course: "English 10H: Steele, George", school: "Pittsford Sutherland", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561"),
+            Classes(course: "Physics H: Hosey, Daniel", school: "Pittsford Sutherland", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=32661"),
+            Classes(course: "Pittsford Nordic", school: "Pittsford Sutherland", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=21245")
         ]
         
         for classes in coursesData{

@@ -35,16 +35,16 @@
         <scene sceneID="FyU-Jc-0KI">
             <objects>
                 <tableViewController title="My Classes" id="fGQ-zf-LPo" customClass="HomeTableViewController" customModule="Steer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" id="vA6-9j-x4o" customClass="ClassData">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="vA6-9j-x4o" customClass="ClassData">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="168" id="43u-We-J7i" customClass="HomeTableViewCell" customModule="Steer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="168"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="201" id="43u-We-J7i" customClass="HomeTableViewCell" customModule="Steer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="43u-We-J7i" id="wGR-K8-le8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English 10 Honors: Steele, George" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-PE-39N">
@@ -55,7 +55,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Complete HW" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jBc-eD-hYd">
-                                            <rect key="frame" x="8" y="55" width="353" height="76"/>
+                                            <rect key="frame" x="8" y="55" width="353" height="125"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -89,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4KH-jk-0Dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="26"/>
+            <point key="canvasLocation" x="220" y="25.637181409295355"/>
         </scene>
         <!--Add Classes-->
         <scene sceneID="igU-gk-Snz">
@@ -104,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JDh-eH-ly7" id="qUr-is-HnV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English 10 Honors: Steele, George" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9Y-2d-g51">
@@ -119,7 +119,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Add Class"/>
                                             <connections>
-                                                <action selector="AddClass:" destination="53y-BG-uSI" eventType="touchUpInside" id="fZR-eE-h3y"/>
+                                                <action selector="AddClass:" destination="JDh-eH-ly7" eventType="touchUpInside" id="GD9-Q9-pd4"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pittsford Sutherland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-N3-xq2">
@@ -129,12 +129,20 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFr-8d-hVn">
+                                            <rect key="frame" x="314" y="0.0" width="45" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="AddClass" destination="Nma-4C-VhR" id="VK9-4L-Mwl"/>
+                                    <outlet property="AddClass" destination="Nma-4C-VhR" id="LP5-eS-t6c"/>
                                     <outlet property="ClassName" destination="m9Y-2d-g51" id="c02-5W-0AX"/>
                                     <outlet property="ClassSchool" destination="Mqg-N3-xq2" id="AMI-Ld-5ta"/>
+                                    <outlet property="URL" destination="KFr-8d-hVn" id="ZCG-Pf-s3Q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -147,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1A-hR-T0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="26"/>
+            <point key="canvasLocation" x="992.79999999999995" y="25.637181409295355"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.28824871169999999" green="0.4393939275" blue="0.58417665159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

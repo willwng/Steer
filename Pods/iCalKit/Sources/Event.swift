@@ -108,8 +108,13 @@ extension Event: CustomStringConvertible {
             let interval = date.timeIntervalSince(dtstamp)
             if (interval >= Double(-days) && interval <= Double(days)){
                 if (dtstamp != nil){
-                    let dateprint = dateFormatterPrint.string(from: dtstamp)
-                    output += String(describing: dateprint) + ": "
+                    if (NSCalendar.current.isDateInToday(dtstamp)) {
+                        let dateprint = dateFormatterPrint.string(from: dtstamp)
+                        output += "Today (\(String(describing: dateprint))): "
+                    } else {
+                        let dateprint = dateFormatterPrint.string(from: dtstamp)
+                        output += String(describing: dateprint) + ": "
+                    }
                 }
                 if (summary != nil){
                     output += summary! + " "

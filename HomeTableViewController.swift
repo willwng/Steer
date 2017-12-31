@@ -193,6 +193,9 @@ class HomeTableViewController: UITableViewController {
             output = output.reversed()
             data = output.joined()
             data = data.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+            if (data.isEmpty) {
+                //Say something
+            }
             let class1 = Course(title: classes.name, description: data)
             courses += [class1]
         }

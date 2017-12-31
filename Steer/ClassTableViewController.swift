@@ -24,7 +24,7 @@ class ClassTableViewController: UITableViewController {
         } else {
             // Fallback on earlier versions
         }
-        searchController.searchBar.placeholder = "Search Classes"
+        searchController.searchBar.placeholder = "Search Classes or Schools"
         searchController.searchBar.backgroundColor = UIColor.white
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
@@ -124,7 +124,11 @@ class ClassTableViewController: UITableViewController {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredClasses = classe.filter({( classes : Classes) -> Bool in
-            return classes.course.lowercased().contains(searchText.lowercased())
+            if classes.course.lowercased().range(of: searchText.lowercased()) != nil {
+                return classes.course.lowercased().contains(searchText.lowercased())
+            } else {
+                return classes.school.lowercased().contains(searchText.lowercased())
+            }
         })
         
         tableView.reloadData()

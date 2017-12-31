@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E5781DB67605522E82A3DDBB7D5BBAA9"
+               BlueprintIdentifier = "B9F2C1FD876C54B104EDFED9D81E3788"
                BuildableName = "Pods_Steer.framework"
                BlueprintName = "Pods-Steer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5781DB67605522E82A3DDBB7D5BBAA9"
+            BlueprintIdentifier = "B9F2C1FD876C54B104EDFED9D81E3788"
             BuildableName = "Pods_Steer.framework"
             BlueprintName = "Pods-Steer"
             ReferencedContainer = "container:Pods.xcodeproj">

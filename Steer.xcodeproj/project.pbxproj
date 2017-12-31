@@ -12,6 +12,9 @@
 		49A437551FF5F41900EB2AB5 /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A437541FF5F41900EB2AB5 /* ClassName.swift */; };
 		49A437571FF5F45700EB2AB5 /* ClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */; };
 		49A437591FF5F46C00EB2AB5 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A437581FF5F46C00EB2AB5 /* ClassTableViewCell.swift */; };
+		49C969C01FF9610C00E3DB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C969BF1FF9610C00E3DB56 /* GoogleService-Info.plist */; };
+		49C969C11FF9610C00E3DB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C969BF1FF9610C00E3DB56 /* GoogleService-Info.plist */; };
+		49C969C21FF9610C00E3DB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C969BF1FF9610C00E3DB56 /* GoogleService-Info.plist */; };
 		49EB04531FEFF235007B6A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB04521FEFF235007B6A6A /* AppDelegate.swift */; };
 		49EB04551FEFF235007B6A6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB04541FEFF235007B6A6A /* ViewController.swift */; };
 		49EB04581FEFF235007B6A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EB04561FEFF235007B6A6A /* Main.storyboard */; };
@@ -51,6 +54,7 @@
 		49A437541FF5F41900EB2AB5 /* ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
 		49A437561FF5F45700EB2AB5 /* ClassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewController.swift; sourceTree = "<group>"; };
 		49A437581FF5F46C00EB2AB5 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
+		49C969BF1FF9610C00E3DB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49EB044F1FEFF235007B6A6A /* Steer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EB04521FEFF235007B6A6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EB04541FEFF235007B6A6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				49EB04591FEFF235007B6A6A /* Assets.xcassets */,
 				49EB045B1FEFF235007B6A6A /* LaunchScreen.storyboard */,
 				49EB045E1FEFF235007B6A6A /* Info.plist */,
+				49C969BF1FF9610C00E3DB56 /* GoogleService-Info.plist */,
 			);
 			path = Steer;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EB045D1FEFF235007B6A6A /* LaunchScreen.storyboard in Resources */,
+				49C969C01FF9610C00E3DB56 /* GoogleService-Info.plist in Resources */,
 				49EB045A1FEFF235007B6A6A /* Assets.xcassets in Resources */,
 				49EB04581FEFF235007B6A6A /* Main.storyboard in Resources */,
 			);
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C969C11FF9610C00E3DB56 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C969C21FF9610C00E3DB56 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,11 +377,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Steer/Pods-Steer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/iCalKit/iCalKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCalKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -662,7 +676,7 @@
 				INFOPLIST_FILE = Steer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Steer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WillWang.Steer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -678,7 +692,7 @@
 				INFOPLIST_FILE = Steer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Steer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WillWang.Steer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

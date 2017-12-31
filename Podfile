@@ -9,7 +9,7 @@ target 'Steer' do
 
   # Pods for Steer
     pod 'iCalKit', :git => 'https://github.com/kiliankoe/iCalKit.git'
-	
+    pod 'Firebase/Database'
 
   target 'SteerTests' do
     inherit! :search_paths

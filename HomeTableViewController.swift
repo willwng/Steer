@@ -12,6 +12,8 @@ import SQLite3
 class HomeTableViewController: UITableViewController {
 
     //MARK: Properties
+    var output = [String]()
+    var ids = [Int]()
     var db: OpaquePointer?
     var courses = [Course]()
 
@@ -78,23 +80,18 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("Deleted")
-            let deleteStatementStirng = "DELETE FROM Classes WHERE id = \(indexPath.row);"
+            
             self.courses.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            var deleteStatement: OpaquePointer? = nil
-            if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
-                if sqlite3_step(deleteStatement) == SQLITE_DONE {
-                    print("Successfully deleted row.")
-                } else {
-                    print("Could not delete row.")
-                }
-            } else {
-                print("DELETE statement could not be prepared")
-            }
-            
-            sqlite3_finalize(deleteStatement)
+            deleteRow(row: indexPath.row + ids.first!)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+        self.courses.removeAll()
+        self.loadClassData()
+        self.tableView.reloadData()
     }
     /*
     // Override to support conditional editing of the table view.
@@ -142,9 +139,25 @@ class HomeTableViewController: UITableViewController {
     */
     
     //MARK: Private Methods
-
+    private func deleteRow(row: Int){
+        let deleteString = "DELETE FROM Classes WHERE id = \(row);"
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteString, -1, &deleteStatement, nil) == SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted row.")
+            } else {
+                print("Could not delete row.")
+            }
+        } else {
+            print("DELETE statement could not be prepared")
+        }
+        
+        sqlite3_finalize(deleteStatement)
+    }
+    
+    
     private func loadClassData() {
-        let queryString = "SELECT * FROM Classes"
+        let queryString = "SELECT * FROM Classes ORDER BY id"
         
         var stmt:OpaquePointer?
         
@@ -153,13 +166,13 @@ class HomeTableViewController: UITableViewController {
             print("error preparing insert: \(errmsg)")
             return
         }
-        var coursesData = [CourseData(name: "English 10H: Steele, George", url: "https://www.pittsfordschools.org/site/handlers/icalfeed.ashx?MIID=29561")]
-        
+        var coursesData = [CourseData]()
+        ids.removeAll()
         while(sqlite3_step(stmt) == SQLITE_ROW){
             let id = Int(sqlite3_column_int(stmt, 0))
+            ids.append(id)
             let name = String(cString: sqlite3_column_text(stmt, 1))
             let url = String(cString: sqlite3_column_text(stmt, 2))
-            print(id)
             coursesData.append(CourseData(name: String(describing: name), url: String(describing: url)))
         }
         
@@ -169,14 +182,17 @@ class HomeTableViewController: UITableViewController {
             guard let cals = try? iCal.load(url: url!) else {
                 return
             }
-
+            output.removeAll()
             for cal in cals {
                 for event in cal.subComponents where event is Event {
-                    print(event)
+                    data = String(describing: event)
                     data += "\n"
-                    data += String(describing: event)
+                    output.append(data)
                 }
             }
+            output = output.reversed()
+            data = output.joined()
+            data = data.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
             let class1 = Course(title: classes.name, description: data)
             courses += [class1]
         }

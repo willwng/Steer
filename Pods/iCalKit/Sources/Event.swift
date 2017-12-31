@@ -104,10 +104,9 @@ extension Event: CustomStringConvertible {
         var output = ""
         //return String(describing: dtstamp.toString()) + ": " + summary! + ": "
         if (dtstamp != nil){
-            let day = 86400
-            let dateLower = date.addingTimeInterval(TimeInterval(-(day*50)))
-            let dateUpper = date.addingTimeInterval(TimeInterval(day*50))
-            if (dtstamp <= dateUpper && dtstamp >= dateLower){
+            let days = 172800
+            let interval = date.timeIntervalSince(dtstamp)
+            if (interval >= Double(-days) && interval <= Double(days)){
                 if (dtstamp != nil){
                     let dateprint = dateFormatterPrint.string(from: dtstamp)
                     output += String(describing: dateprint) + ": "

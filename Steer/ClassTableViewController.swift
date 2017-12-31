@@ -11,6 +11,7 @@ import SQLite3
 import Firebase
 
 class ClassTableViewController: UITableViewController {
+    
     let searchController = UISearchController(searchResultsController: nil)
     var ref: DatabaseReference!
     var db: OpaquePointer?
@@ -68,8 +69,8 @@ class ClassTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ClassTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ClassTableViewCell.")
         }
-        
         let course: Classes
+        
         if isFiltering() {
             course = filteredClasses[indexPath.row]
         } else {
@@ -78,10 +79,7 @@ class ClassTableViewController: UITableViewController {
 
         cell.ClassName.text = course.course
         cell.ClassSchool.text = course.school
-        if checkIfRowExists(name: cell.ClassName.text!) {
-            print("rowexists")
-            cell.AddClass.setTitle("Added!", for: .normal)
-        }
+        cell.AddClass.setTitle("Add Class", for: .normal)
         cell.URL.text = course.url
         return cell
     }

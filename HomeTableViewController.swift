@@ -154,6 +154,7 @@ class HomeTableViewController: UITableViewController {
         sqlite3_finalize(deleteStatement)
     }
     
+
     private func loadClassData() {
         let queryString = "SELECT * FROM Classes ORDER BY id"
         var stmt:OpaquePointer?

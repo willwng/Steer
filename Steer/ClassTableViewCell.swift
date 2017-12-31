@@ -28,7 +28,9 @@ class ClassTableViewCell: UITableViewCell {
     }
     
     @IBAction func AddClass(_ sender: UIButton) {
+        
         self.AddClass.setTitle("Added!", for: .normal)
+        //self.AddClass.isEnabled = false
         let classname = self.ClassName.text
         let schoolname = self.ClassSchool.text
         let url = self.URL.text

@@ -38,15 +38,11 @@ class ClassTableViewController: UITableViewController {
         loadClassData()
     }
 
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -57,20 +53,17 @@ class ClassTableViewController: UITableViewController {
         if isFiltering() {
             return filteredClasses.count
         }
-        
         return classe.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cellIdentifier = "ClassTableViewCell"
         
+        let cellIdentifier = "ClassTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ClassTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ClassTableViewCell.")
         }
-        let course: Classes
         
+        let course: Classes
         if isFiltering() {
             course = filteredClasses[indexPath.row]
         } else {
@@ -79,7 +72,12 @@ class ClassTableViewController: UITableViewController {
 
         cell.ClassName.text = course.course
         cell.ClassSchool.text = course.school
-        cell.AddClass.setTitle("Add Class", for: .normal)
+        if rowExists() { //Replace This Line
+            cell.AddClass.setTitle("Added!", for: .normal)
+            cell.AddClass.isEnabled = false
+        } else {
+            cell.AddClass.setTitle("Add Class", for: .normal)
+        }
         cell.URL.text = course.url
         return cell
     }
@@ -112,7 +110,9 @@ class ClassTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
-    
+    func rowExists() -> Bool {
+        return false
+    }
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
@@ -132,6 +132,7 @@ class ClassTableViewController: UITableViewController {
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
+    
 }
 
 extension ClassTableViewController: UISearchResultsUpdating {

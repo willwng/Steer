@@ -48,13 +48,13 @@
 		2270082DCEBD288266D623095D565A9F /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser.swift; sourceTree = "<group>"; };
 		256D04D1DB43F1970FCF9C69139164D6 /* Pods-SteerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SteerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		34F633136A84DFAEFF3DACF40543073C /* Pods-Steer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Steer.debug.xcconfig"; sourceTree = "<group>"; };
-		35BE00AD95FE50F1E0E3FF97F8213B03 /* Pods_Steer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35BE00AD95FE50F1E0E3FF97F8213B03 /* Pods_Steer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Steer.framework; path = "Pods-Steer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D20F83343850613C70D9650058E4A47 /* Pods-SteerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SteerTests-umbrella.h"; sourceTree = "<group>"; };
-		40730C9DB01174799AE1661C9A3684C5 /* Pods-SteerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SteerTests.modulemap"; sourceTree = "<group>"; };
-		4BE8963221BAC782D4EE824C8F0F6C0D /* iCalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iCalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40730C9DB01174799AE1661C9A3684C5 /* Pods-SteerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SteerTests.modulemap"; sourceTree = "<group>"; };
+		4BE8963221BAC782D4EE824C8F0F6C0D /* iCalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iCalKit.framework; path = iCalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D2FE7D7BCF8D2AE224EAED865D977AA /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Extensions/Date.swift; sourceTree = "<group>"; };
 		53908A5A4C0FBF4E907456EE80DDC53A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5610021F0749D84880863D0D9CDD84AA /* Pods-SteerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SteerUITests.modulemap"; sourceTree = "<group>"; };
+		5610021F0749D84880863D0D9CDD84AA /* Pods-SteerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SteerUITests.modulemap"; sourceTree = "<group>"; };
 		56863B276EC9B2B07CD0F8C30994C92F /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = Sources/Extensions/String.swift; sourceTree = "<group>"; };
 		5CC84DA34065D5045623119695A2E181 /* IcsElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IcsElement.swift; path = Sources/Protocols/IcsElement.swift; sourceTree = "<group>"; };
 		6090CA2D7B4EF78FDB79499781D5C0F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,10 +73,10 @@
 		871EA60779C1AA1A743C8C4EEA7AF7DC /* iCalKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCalKit-umbrella.h"; sourceTree = "<group>"; };
 		8F16BE02FE1DDEFD4BFDD25C0F482256 /* Pods-SteerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SteerTests.release.xcconfig"; sourceTree = "<group>"; };
 		9194213869DC265DD1B80AAD7BB1544A /* Alarm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = Sources/Alarm.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95D7026F683941A6200D7DDE53C4D08F /* Pods-SteerUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SteerUITests-umbrella.h"; sourceTree = "<group>"; };
 		98B0E4687EB7B3A6DF9DA1C6432F22B4 /* Pods-Steer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Steer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D427C99AC623B1E28DFECE353397CA0 /* Pods-Steer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Steer.modulemap"; sourceTree = "<group>"; };
+		9D427C99AC623B1E28DFECE353397CA0 /* Pods-Steer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Steer.modulemap"; sourceTree = "<group>"; };
 		AC6057C2485C72E0BEC0CE7E31DC535D /* iCalKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iCalKit.xcconfig; sourceTree = "<group>"; };
 		ADCF3E8D1DC5F608E21908630E0430A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEFFABEA9F811053FD8417CCB8230672 /* Pods-SteerUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SteerUITests-frameworks.sh"; sourceTree = "<group>"; };
@@ -85,13 +85,13 @@
 		BEF3ED769D75D7BD84AC179DE62F45AA /* iCalError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iCalError.swift; path = Sources/Enums/iCalError.swift; sourceTree = "<group>"; };
 		C41A115FAE6A89FAE1392F4A9C669998 /* Pods-SteerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SteerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C7323D2E83C56B6085BE7B9EAB04699B /* iCalKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCalKit-prefix.pch"; sourceTree = "<group>"; };
-		D412AF0483E19ADEAFAE228AFAA6979D /* Pods_SteerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SteerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD60BBF831AB9DD3BB999C3F4DE2D71D /* Pods_SteerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SteerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D412AF0483E19ADEAFAE228AFAA6979D /* Pods_SteerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SteerTests.framework; path = "Pods-SteerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD60BBF831AB9DD3BB999C3F4DE2D71D /* Pods_SteerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SteerUITests.framework; path = "Pods-SteerUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18794C0BD7BBF835FE80BDE5E18CB11 /* Pods-Steer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Steer-frameworks.sh"; sourceTree = "<group>"; };
 		E4FB6B3C21AE10192C43FE8EDC806BB0 /* Pods-SteerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SteerTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EBBF11F623BF464AF61B95B43E029344 /* iCalKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iCalKit-dummy.m"; sourceTree = "<group>"; };
 		F365566BBA18A1497B718CA077B84318 /* Pods-SteerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SteerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F649F1D11D487BCD19DDC005CE87CFF7 /* iCalKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = iCalKit.modulemap; sourceTree = "<group>"; };
+		F649F1D11D487BCD19DDC005CE87CFF7 /* iCalKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = iCalKit.modulemap; sourceTree = "<group>"; };
 		F657263D4AC6A77E721650AF12D34677 /* Calendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Calendar.swift; path = Sources/Calendar.swift; sourceTree = "<group>"; };
 		FF7185D8B78C39879855118E3675F39F /* Pods-SteerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SteerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +161,7 @@
 				56863B276EC9B2B07CD0F8C30994C92F /* String.swift */,
 				2AA3365BB195C87F0582B5803DC8BF40 /* Support Files */,
 			);
+			name = iCalKit;
 			path = iCalKit;
 			sourceTree = "<group>";
 		};
@@ -388,7 +389,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -612,7 +613,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

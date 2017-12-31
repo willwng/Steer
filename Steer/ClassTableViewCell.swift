@@ -28,7 +28,6 @@ class ClassTableViewCell: UITableViewCell {
     }
     
     @IBAction func AddClass(_ sender: UIButton) {
-        
         self.AddClass.setTitle("Added!", for: .normal)
         let classname = self.ClassName.text
         let schoolname = self.ClassSchool.text
@@ -76,5 +75,7 @@ class ClassTableViewCell: UITableViewCell {
         print("SUCcESS")
         print(classname!, schoolname!, url!)
     }
+    
 
+    
 }

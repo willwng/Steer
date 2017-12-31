@@ -9,9 +9,9 @@
 import UIKit
 import iCalKit
 import SQLite3
+
 class HomeTableViewController: UITableViewController {
 
-    //MARK: Properties
     var output = [String]()
     var ids = [Int]()
     var db: OpaquePointer?
@@ -22,7 +22,6 @@ class HomeTableViewController: UITableViewController {
         
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("Classes.sqlite")
-        
         
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("error opening database")
@@ -155,10 +154,8 @@ class HomeTableViewController: UITableViewController {
         sqlite3_finalize(deleteStatement)
     }
     
-    
     private func loadClassData() {
         let queryString = "SELECT * FROM Classes ORDER BY id"
-        
         var stmt:OpaquePointer?
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{

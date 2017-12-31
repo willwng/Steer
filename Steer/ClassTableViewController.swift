@@ -16,6 +16,7 @@ class ClassTableViewController: UITableViewController {
     var db: OpaquePointer?
     var classe = [Classes]()
     var filteredClasses = [Classes]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -74,13 +75,20 @@ class ClassTableViewController: UITableViewController {
         } else {
             course = classe[indexPath.row]
         }
+
         cell.ClassName.text = course.course
         cell.ClassSchool.text = course.school
-        cell.AddClass.setTitle("Add Class", for: .normal)
+        if checkIfRowExists(name: cell.ClassName.text!) {
+            print("rowexists")
+            cell.AddClass.setTitle("Added!", for: .normal)
+        }
         cell.URL.text = course.url
         return cell
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -91,28 +99,18 @@ class ClassTableViewController: UITableViewController {
     }
     */
     private func loadClassData() {
-        
         ref = Database.database().reference().child("Classes");
-        
-        //observing the data changes
         ref.observe(DataEventType.value, with: { (snapshot) in
             self.classe.removeAll()
-            
-            //iterating through all the values
             for classes in snapshot.children.allObjects as! [DataSnapshot] {
-                //getting values
                 let classObject = classes.value as? [String: AnyObject]
                 let names  = classObject?["Name"]
                 let schoolname  = classObject?["School"]
                 let url = classObject?["url"]
-                
-                //creating artist object with model and fetched values
+
                 let class1 = Classes(course: names as! String?, school : schoolname as! String?, url: url as! String?)
-                
                 self.classe += [class1]
             }
-            
-            //reloading the tableview
             self.tableView.reloadData()
         })
     }

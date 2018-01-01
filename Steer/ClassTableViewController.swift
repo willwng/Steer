@@ -17,6 +17,7 @@ class ClassTableViewController: UITableViewController {
     var db: OpaquePointer?
     var classe = [Classes]()
     var filteredClasses = [Classes]()
+    var names = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,18 @@ class ClassTableViewController: UITableViewController {
             // Fallback on earlier versions
         }
         definesPresentationContext = true
+        
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent("Classes.sqlite")
+        
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("error opening database")
+        }
+        
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Classes (id INTEGER PRIMARY KEY NOT NULL, name TEXT, url TEXT)", nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error creating table: \(errmsg)")
+        }
         
         loadClassData()
     }
@@ -72,11 +85,12 @@ class ClassTableViewController: UITableViewController {
 
         cell.ClassName.text = course.course
         cell.ClassSchool.text = course.school
-        if rowExists() { //Replace This Line
+        if rowExists(name: course.course) {
             cell.AddClass.setTitle("Added!", for: .normal)
             cell.AddClass.isEnabled = false
         } else {
             cell.AddClass.setTitle("Add Class", for: .normal)
+            cell.AddClass.isEnabled = true
         }
         cell.URL.text = course.url
         return cell
@@ -110,9 +124,27 @@ class ClassTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
-    func rowExists() -> Bool {
-        return false
+    
+    func rowExists(name: String) -> Bool {
+        let queryString = "SELECT * FROM Classes ORDER BY id"
+        var stmt:OpaquePointer?
+        names.removeAll()
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print(errmsg)
+            return false
+        }
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            let coursename = String(cString: sqlite3_column_text(stmt, 1))
+            names.append(coursename)
+        }
+        if names.contains(name) {
+            return true
+        } else {
+            return false
+        }
     }
+    
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true

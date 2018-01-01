@@ -23,12 +23,9 @@ class ClassTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func AddClass(_ sender: UIButton) {
-        
         self.AddClass.setTitle("Added!", for: .normal)
         //self.AddClass.isEnabled = false
         let classname = self.ClassName.text
@@ -72,10 +69,7 @@ class ClassTableViewCell: UITableViewCell {
             print("failure inserting hero: \(errmsg)")
             return
         }
-        
-        
-        print("SUCcESS")
-        print(classname!, schoolname!, url!)
+        print("SUCcESS",classname!, schoolname!, url!)
     }
     
 

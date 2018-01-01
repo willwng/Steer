@@ -82,7 +82,7 @@ class HomeTableViewController: UITableViewController {
             
             self.courses.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            deleteRow(row: indexPath.row + ids.first!)
+            deleteRow(row: ids[indexPath.row])
         }
     }
     

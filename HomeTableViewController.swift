@@ -79,10 +79,10 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
             self.courses.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             deleteRow(row: ids[indexPath.row])
+            ids.remove(at: indexPath.row)
         }
     }
     
@@ -177,23 +177,26 @@ class HomeTableViewController: UITableViewController {
         for classes in coursesData{
             var data = ""
             let url = URL(string: classes.url)
-            guard let cals = try? iCal.load(url: url!) else {
-                return
-            }
-            output.removeAll()
-            for cal in cals {
-                for event in cal.subComponents where event is Event {
-                    data = String(describing: event)
-                    data += "\n"
-                    output.append(data)
+            do {
+                let cals = try iCal.load(url: url!)
+                output.removeAll()
+                for cal in cals {
+                    for event in cal.subComponents where event is Event {
+                        data = String(describing: event)
+                        data += "\n"
+                        output.append(data)
+                    }
                 }
+                output = output.reversed()
+                data = output.joined()
+                data = data.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+                if (data.isEmpty) {
+                    //Say something
+                }
+            } catch {
+                data = "Could not fetch data... Please check your Internet Connection"
             }
-            output = output.reversed()
-            data = output.joined()
-            data = data.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
-            if (data.isEmpty) {
-                //Say something
-            }
+
             let class1 = Course(title: classes.name, description: data)
             courses += [class1]
         }

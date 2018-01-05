@@ -32,7 +32,7 @@ class ClassTableViewController: UITableViewController {
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
-            // Fallback on earlier versions
+            //tableView.tableHeaderView = searchController.searchBar
         }
         definesPresentationContext = true
         
@@ -84,6 +84,8 @@ class ClassTableViewController: UITableViewController {
         }
 
         cell.ClassName.text = course.course
+        cell.ClassName.sizeToFit()
+        cell.ClassName.adjustsFontSizeToFitWidth = true
         cell.ClassSchool.text = course.school
         if rowExists(name: course.course) {
             cell.AddClass.setTitle("Added!", for: .normal)

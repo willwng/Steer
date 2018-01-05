@@ -72,7 +72,8 @@ class HomeTableViewController: UITableViewController {
         
         cell.classLabel.text = course.title
         cell.taskLabel.text = course.description
-        cell.taskLabel.setContentOffset(.zero, animated: false)
+        //cell.taskLabel.setContentOffset(.zero, animated: false)
+        cell.taskLabel.scrollRangeToVisible(NSMakeRange(0, 0))
         return cell
     }
     
@@ -191,7 +192,7 @@ class HomeTableViewController: UITableViewController {
                 data = output.joined()
                 data = data.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
                 if (data.isEmpty) {
-                    //Say something
+                    data = "Nothing to show..."
                 }
             } catch {
                 data = "Could not fetch data... Please check your Internet Connection"

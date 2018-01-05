@@ -72,7 +72,7 @@ class HomeTableViewController: UITableViewController {
         
         cell.classLabel.text = course.title
         cell.taskLabel.text = course.description
-
+        cell.taskLabel.setContentOffset(.zero, animated: false)
         return cell
     }
     

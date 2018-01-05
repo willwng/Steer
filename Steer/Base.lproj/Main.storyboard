@@ -137,14 +137,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nma-4C-VhR">
-                                            <rect key="frame" x="290" y="64" width="69" height="30"/>
+                                            <rect key="frame" x="290" y="60" width="69" height="30"/>
                                             <state key="normal" title="Add Class"/>
                                             <connections>
                                                 <action selector="AddClass:" destination="JDh-eH-ly7" eventType="touchUpInside" id="GD9-Q9-pd4"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Pittsford Sutherland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqg-N3-xq2">
-                                            <rect key="frame" x="16" y="67" width="231" height="18"/>
+                                            <rect key="frame" x="16" y="63" width="231" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="231" id="9QU-Sr-sgf"/>
                                             </constraints>
@@ -154,14 +154,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Nma-4C-VhR" firstAttribute="top" secondItem="m9Y-2d-g51" secondAttribute="bottom" constant="19" id="6eY-wz-IAa"/>
+                                        <constraint firstItem="Nma-4C-VhR" firstAttribute="top" secondItem="m9Y-2d-g51" secondAttribute="bottom" constant="15" id="6eY-wz-IAa"/>
+                                        <constraint firstItem="Mqg-N3-xq2" firstAttribute="leading" secondItem="qUr-is-HnV" secondAttribute="leadingMargin" id="8VL-g2-oqj"/>
                                         <constraint firstItem="m9Y-2d-g51" firstAttribute="top" secondItem="qUr-is-HnV" secondAttribute="topMargin" constant="15" id="EVg-1t-feY"/>
                                         <constraint firstItem="m9Y-2d-g51" firstAttribute="leading" secondItem="qUr-is-HnV" secondAttribute="leadingMargin" id="T7V-cA-YAa"/>
-                                        <constraint firstItem="Mqg-N3-xq2" firstAttribute="leading" secondItem="qUr-is-HnV" secondAttribute="leading" constant="16" id="U1n-NW-vpa"/>
                                         <constraint firstItem="m9Y-2d-g51" firstAttribute="trailing" secondItem="qUr-is-HnV" secondAttribute="trailingMargin" id="VkD-YV-qaZ"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mqg-N3-xq2" secondAttribute="trailing" constant="20" symbolic="YES" id="WDi-kg-OS8"/>
                                         <constraint firstAttribute="trailing" secondItem="Nma-4C-VhR" secondAttribute="trailing" constant="16" id="YO8-E7-ORc"/>
-                                        <constraint firstItem="Mqg-N3-xq2" firstAttribute="top" secondItem="m9Y-2d-g51" secondAttribute="bottom" constant="22" id="Yrr-T5-O0C"/>
+                                        <constraint firstItem="Mqg-N3-xq2" firstAttribute="top" secondItem="m9Y-2d-g51" secondAttribute="bottom" constant="18" id="Yrr-T5-O0C"/>
                                         <constraint firstItem="Nma-4C-VhR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qUr-is-HnV" secondAttribute="leading" constant="20" symbolic="YES" id="dFp-A0-CvH"/>
                                     </constraints>
                                 </tableViewCellContentView>

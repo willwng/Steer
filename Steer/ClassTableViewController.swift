@@ -29,10 +29,11 @@ class ClassTableViewController: UITableViewController {
         }
         searchController.searchBar.placeholder = "Search Classes or Schools"
         searchController.searchBar.backgroundColor = UIColor.white
+        searchController.searchBar.tintColor = UIColor.black
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
-            //tableView.tableHeaderView = searchController.searchBar
+            tableView.tableHeaderView = searchController.searchBar
         }
         definesPresentationContext = true
         

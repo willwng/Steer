@@ -22,14 +22,12 @@ class ClassTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
-        if #available(iOS 9.1, *) {
-            searchController.obscuresBackgroundDuringPresentation = false
-        } else {
-            // Fallback on earlier versions
-        }
+        searchController.dimsBackgroundDuringPresentation = false
+        self.extendedLayoutIncludesOpaqueBars = true
         searchController.searchBar.placeholder = "Search Classes or Schools"
         searchController.searchBar.backgroundColor = UIColor.white
         searchController.searchBar.tintColor = UIColor.black
+        searchController.searchBar.barTintColor = UIColor(red: 1.00, green: 0.65, blue: 0.00, alpha: 1.0)
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {

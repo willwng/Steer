@@ -104,7 +104,7 @@ extension Event: CustomStringConvertible {
         var output = ""
         //return String(describing: dtstamp.toString()) + ": " + summary! + ": "
         if (dtstamp != nil){
-            let days = 172800
+            let days = (86400*2)
             let interval = date.timeIntervalSince(dtstamp)
             if (interval >= Double(-days) && interval <= Double(days)){
                 if (dtstamp != nil){

@@ -31,16 +31,20 @@ class HomeTableViewController: UITableViewController {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 50
         loadClassData()
         
     }
-
+    
     @IBAction func Refresh(_ sender: UIBarButtonItem) {
         self.tableView.reloadData()
         self.courses.removeAll()
         self.loadClassData()
         self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,11 +73,12 @@ class HomeTableViewController: UITableViewController {
         
         // Fetches the appropriate meal for the data source layout.
         let course = courses[indexPath.row]
-        
+        let task = course.description
         cell.classLabel.text = course.title
-        cell.taskLabel.text = course.description
-        //cell.taskLabel.setContentOffset(.zero, animated: false)
-        cell.taskLabel.scrollRangeToVisible(NSMakeRange(0, 0))
+        cell.taskLabel.text = task.trimmingCharacters(in: .whitespacesAndNewlines)
+        cell.taskLabel.sizeToFit()
+        cell.taskLabel.setContentOffset(.zero, animated: false)
+        //cell.taskLabel.scrollRangeToVisible(NSMakeRange(0, 0))
         return cell
     }
     
@@ -93,50 +98,10 @@ class HomeTableViewController: UITableViewController {
         self.loadClassData()
         self.tableView.reloadData()
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     //MARK: Private Methods
     private func deleteRow(row: Int){
@@ -174,7 +139,7 @@ class HomeTableViewController: UITableViewController {
             let url = String(cString: sqlite3_column_text(stmt, 2))
             coursesData.append(CourseData(name: String(describing: name), url: String(describing: url)))
         }
-        
+        //self.title = "My Classes (\(ids.count))"
         for classes in coursesData{
             var data = ""
             let url = URL(string: classes.url)
@@ -191,6 +156,7 @@ class HomeTableViewController: UITableViewController {
                 output = output.reversed()
                 data = output.joined()
                 data = data.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+                data = data.trimmingCharacters(in: .whitespaces)
                 if (data.isEmpty) {
                     data = "Nothing to show..."
                 }

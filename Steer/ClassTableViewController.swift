@@ -103,12 +103,8 @@ class ClassTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+ 
     private func loadClassData() {
         ref = Database.database().reference().child("Classes");
         ref.observe(DataEventType.value, with: { (snapshot) in

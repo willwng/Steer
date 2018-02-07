@@ -36,26 +36,26 @@
         <scene sceneID="FyU-Jc-0KI">
             <objects>
                 <tableViewController title="My Classes" id="fGQ-zf-LPo" customClass="HomeTableViewController" customModule="Steer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="vA6-9j-x4o" customClass="ClassData">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="vA6-9j-x4o" customClass="ClassData">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="150" id="43u-We-J7i" customClass="HomeTableViewCell" customModule="Steer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="90" id="43u-We-J7i" customClass="HomeTableViewCell" customModule="Steer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="43u-We-J7i" id="wGR-K8-le8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English 10 Honors: Steele, George" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-PE-39N">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English 10 Honors: Steele, George" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-PE-39N">
                                             <rect key="frame" x="16" y="19" width="343" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Complete HW" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jBc-eD-hYd">
-                                            <rect key="frame" x="16" y="49" width="343" height="81"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" text="Complete HW" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jBc-eD-hYd">
+                                            <rect key="frame" x="16" y="49" width="343" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -66,7 +66,7 @@
                                         <constraint firstItem="jBc-eD-hYd" firstAttribute="leading" secondItem="wGR-K8-le8" secondAttribute="leading" constant="16" id="0ym-V5-W1o"/>
                                         <constraint firstItem="oSb-PE-39N" firstAttribute="leading" secondItem="wGR-K8-le8" secondAttribute="leadingMargin" id="Da8-Q6-zBo"/>
                                         <constraint firstItem="oSb-PE-39N" firstAttribute="top" secondItem="wGR-K8-le8" secondAttribute="topMargin" constant="8" id="Ew5-zM-LY3"/>
-                                        <constraint firstItem="jBc-eD-hYd" firstAttribute="bottom" secondItem="wGR-K8-le8" secondAttribute="bottomMargin" constant="-9" id="Osk-uZ-nXo"/>
+                                        <constraint firstItem="jBc-eD-hYd" firstAttribute="bottom" secondItem="wGR-K8-le8" secondAttribute="bottomMargin" constant="10" id="Osk-uZ-nXo"/>
                                         <constraint firstItem="jBc-eD-hYd" firstAttribute="top" secondItem="oSb-PE-39N" secondAttribute="bottom" constant="8" id="Qz3-3g-EH7"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="oSb-PE-39N" secondAttribute="trailing" id="RVX-5S-t3W"/>
                                         <constraint firstAttribute="trailing" secondItem="jBc-eD-hYd" secondAttribute="trailing" constant="16" id="bWS-VI-9fK"/>

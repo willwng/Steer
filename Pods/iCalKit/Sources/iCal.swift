@@ -6,8 +6,10 @@ public enum iCal {
     /// - Parameter string: string to load
     /// - Returns: List of containted `Calendar`s
     public static func load(string: String) -> [Calendar] {
-        let icsContent = string.components(separatedBy: "\n")
-        return parse(icsContent)
+        var icsContent = string
+        icsContent = icsContent.replacingOccurrences(of: "\n ", with: "", options: .literal, range: nil)
+        let icsData = icsContent.components(separatedBy: "\n")
+        return parse(icsData)
     }
 
     /// Loads the contents of a given URL. Be it from a local path or external resource.
